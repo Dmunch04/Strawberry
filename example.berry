@@ -1,0 +1,62 @@
+use System;
+
+@instruction_set {
+    ldc 10
+    ldc 40
+    iadd
+}
+
+@add(int a, int b) {
+    #push($a)
+    #push($b)
+    iadd
+}
+
+@print_str(string s) {
+    getstatic java/lang/System/out Ljava/io/PrintStream;
+	#push($s)
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+}
+
+@println_str(string s) {
+    getstatic java/lang/System/out Ljava/io/PrintStream;
+	#push($s)
+	invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+}
+
+@print_int(int i) {
+    getstatic java/lang/System/out Ljava/io/PrintStream;
+	#push($s)
+	invokevirtual java/io/PrintStream/print(I)V
+}
+
+@println_int(int i) {
+    getstatic java/lang/System/out Ljava/io/PrintStream;
+	#push($s)
+	invokevirtual java/io/PrintStream/println(I)V
+}
+
+type Gender enum {
+    MALE,
+    FEMALE,
+}
+
+met main(): none {
+    System.println("Hello, World!");
+    !instruction_set; // won't actually do anything
+
+    int yeet = !add(10, 40);
+    /*
+        ldc 10
+        ldc 40
+        iadd
+        istore_1 ; => var int yeet
+    */
+
+    !println_int(yeet);
+    /*
+        getstatic java/lang/System/out Ljava/io/PrintStream;
+        iload_1
+        invokevirtual java/io/PrintStream/println(I)V
+    */
+}
