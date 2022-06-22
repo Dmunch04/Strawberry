@@ -14,26 +14,26 @@ use System;
 
 @print_str(string s) {
     getstatic java/lang/System/out Ljava/io/PrintStream;
-	#push($s)
-	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+    #push($s)
+    invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
 }
 
 @println_str(string s) {
     getstatic java/lang/System/out Ljava/io/PrintStream;
-	#push($s)
-	invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+    #push($s)
+    invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
 }
 
 @print_int(int i) {
     getstatic java/lang/System/out Ljava/io/PrintStream;
-	#push($s)
-	invokevirtual java/io/PrintStream/print(I)V
+    #push($s)
+    invokevirtual java/io/PrintStream/print(I)V
 }
 
 @println_int(int i) {
     getstatic java/lang/System/out Ljava/io/PrintStream;
-	#push($s)
-	invokevirtual java/io/PrintStream/println(I)V
+    #push($s)
+    invokevirtual java/io/PrintStream/println(I)V
 }
 
 type Gender enum {
